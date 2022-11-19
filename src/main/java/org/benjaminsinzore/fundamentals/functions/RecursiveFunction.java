@@ -8,23 +8,7 @@ public class RecursiveFunction {
 
     public static void main(String[] args){
 
-        List<String> list = new ArrayList<>();
-        list.add("YYY");
-        list.add("YNY");
-        list.add("YYY");
-        list.add("NNY");
-        list.add("NYY");
-        list.add("YYY");
-        list.add("YYY");
-
-//        printNum(list);
-//        int in = countVowels("Benjamin");
-        try {
-            boolean bn = areMutuallyReverse("321","321");
-            System.out.println(bn);
-        } catch (Exception ee){
-            ee.printStackTrace();
-        }
+        countVowels("Benjamin Sinzore");
 
     }
 
@@ -215,12 +199,58 @@ public class RecursiveFunction {
 
 
 
-
     //java.lang.StackOverflowError
     static void p(){
         System.out.println("hello");
         p();
     }
+
+
+
+
+    //Factorial Number
+    static int factorial(int n){
+        if (n == 1)
+            return 1;
+        else
+            return(n * factorial(n-1));
+    }
+
+
+
+
+
+    //Fibonacci Series
+    static int n1=0,n2=1,n3=0;
+    static void printFibo(int count){
+        if(count>0){
+            n3 = n1 + n2;
+            n1 = n2;
+            n2 = n3;
+            System.out.print(" "+n3);
+            printFibo(count-1);
+        }
+    }
+    //Add in main Method
+    /**
+     *     int count=15;
+     *     System.out.print(n1+" "+n2);//printing 0 and 1
+     *     printFibo(count-2);//n-2 because 2 numbers are already printed
+     * */
+
+
+
+
+
+
+    //Factorial of a Number Using Recursion
+    static int factorialTwo( int n ) {
+        if (n != 0)  // termination condition
+            return n * factorial(n-1); // recursive call
+        else
+            return 1;
+    }
+
 
 
 
