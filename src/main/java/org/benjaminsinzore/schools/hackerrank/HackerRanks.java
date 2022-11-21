@@ -2,7 +2,7 @@ package org.benjaminsinzore.schools.hackerrank;
 
 import java.util.*;
 
-public class HackerRank {
+public class HackerRanks {
 
     public static void main(String[] args){
 
