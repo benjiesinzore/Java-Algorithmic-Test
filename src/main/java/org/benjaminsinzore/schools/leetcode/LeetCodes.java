@@ -138,6 +138,7 @@ public class LeetCodes {
         if (!Objects.equals(nums.length % 2, 0)){
 
             getMid = ((nums.length - 1) /2) + 1;
+            retAns = nums[getMid];
 
         } else {
 
@@ -146,10 +147,14 @@ public class LeetCodes {
             get2 = get1 + 1;
             getMid1 = nums[get1];
             getMid2 = nums[get2];
-            getMid = (getMid1 + getMid2) / 2;
+            System.out.println(getMid1 +" "+ getMid2);
+
+            double sum = getMid1 + getMid2;
+            System.out.println(sum/2);
+            retAns = sum / 2;
 
         }
-        retAns = nums[getMid];
+
 
 
         return retAns;
