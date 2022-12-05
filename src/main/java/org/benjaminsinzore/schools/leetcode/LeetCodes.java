@@ -19,7 +19,7 @@ public class LeetCodes {
 
         int[] nums1 = new int[]{10,1,2,3,3,9};
         int[] nums2 = new int[]{4,5,6,7,8,9};
-        double ans = findMedianSortedArrays(nums1, nums2);
+        double ans = findMedianSortedArraysEf2(nums1, nums2);
         System.out.println(ans);
 
     }
@@ -173,6 +173,56 @@ public class LeetCodes {
 
         return retAns;
     }
+
+    public static double findMedianSortedArraysEf1(int[] nums1, int[] nums2) {
+
+        // Concatenate the two arrays
+        int[] nums = new int[nums1.length + nums2.length];
+        System.arraycopy(nums1, 0, nums, 0, nums1.length);
+        System.arraycopy(nums2, 0, nums, nums1.length, nums2.length);
+
+        // Sort the array
+        Arrays.sort(nums);
+
+        // Calculate the median
+        double retAns = 0.0;
+        int mid = nums.length / 2;
+        if (nums.length % 2 == 1) {
+            // If the length is odd, return the middle element
+            retAns = nums[mid];
+        } else {
+            // If the length is even, return the average of the middle two elements
+            retAns = (nums[mid - 1] + nums[mid]) / 2.0;
+        }
+
+        return retAns;
+    }
+
+
+    public static double findMedianSortedArraysEf2(int[] nums1, int[] nums2) {
+
+        // Combine the two input arrays into a single array
+        int[] nums = new int[nums1.length + nums2.length];
+        System.arraycopy(nums1, 0, nums, 0, nums1.length);
+        System.arraycopy(nums2, 0, nums, nums1.length, nums2.length);
+
+        // Sort the combined array using the built-in Java sort method
+        Arrays.sort(nums);
+
+        // Calculate and return the median of the combined array
+        double median;
+        if (nums.length % 2 == 0) {
+            // If the array has an even number of elements, the median is the average of the two middle elements
+            median = (nums[nums.length/2 - 1] + nums[nums.length/2]) / 2.0;
+        } else {
+            // If the array has an odd number of elements, the median is the middle element
+            median = nums[nums.length/2];
+        }
+
+        return median;
+    }
+
+
 
 }
 
