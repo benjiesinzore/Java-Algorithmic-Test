@@ -3,6 +3,7 @@ package org.benjaminsinzore.schools.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class LeetCodes {
 
@@ -16,10 +17,11 @@ public class LeetCodes {
 //        nearestExit(maze, entrance);
 
 
-        int[] nums1 = new int[]{1,2,3};
+        int[] nums1 = new int[]{10,1,2,3,3,9};
         int[] nums2 = new int[]{4,5,6,7,8,9};
         double ans = findMedianSortedArraysAI(nums1, nums2);
         System.out.println(ans);
+
     }
 
 
@@ -114,21 +116,45 @@ public class LeetCodes {
      */
     public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
 
-//        Integer[] newArr = new Integer[]{};
-        List<Integer> newArr = new ArrayList<>();
+
+        int[] nums = new int[nums1.length + nums2.length];
         double retAns = 0.0;
-        for ( int forEach1 : nums1 ) {
-            newArr.add(forEach1);
+        int  k = 0;
+        for (int i : nums1) {
+
+            nums[k] = i;
+            k++;
         }
 
-        for ( int forEach2 : nums2 ) {
-            newArr.add(forEach2);
+        for ( int i : nums2) {
+
+            nums[k] = i;
+            k++;
         }
 
-        System.out.println(newArr);
+        System.out.println(Arrays.toString(nums));
+        //Check if the length is odd
+        int getMid = 0;
+        if (!Objects.equals(nums.length % 2, 0)){
+
+            getMid = ((nums.length - 1) /2) + 1;
+
+        } else {
+
+            int get1, get2, getMid1, getMid2;
+            get1 = nums.length / 2;
+            get2 = get1 + 1;
+            getMid1 = nums[get1];
+            getMid2 = nums[get2];
+            getMid = (getMid1 + getMid2) / 2;
+
+        }
+        retAns = nums[getMid];
+
 
         return retAns;
     }
+
 
 
 
@@ -148,17 +174,22 @@ public class LeetCodes {
             k++;
         }
 
+
+
         while (i < nums1.length) {
             nums[k] = nums1[i];
             i++;
             k++;
         }
+
+
         while (j < nums2.length) {
             nums[k] = nums2[j];
             j++;
             k++;
         }
 
+        System.out.println(Arrays.toString(nums));
         // calculate the median of the combined array
         int n = nums.length;
         if (n % 2 == 0) {
