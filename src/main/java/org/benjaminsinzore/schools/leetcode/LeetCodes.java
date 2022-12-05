@@ -18,7 +18,7 @@ public class LeetCodes {
 
         int[] nums1 = new int[]{1,2,3};
         int[] nums2 = new int[]{4,5,6,7,8,9};
-        double ans = findMedianSortedArrays(nums1, nums2);
+        double ans = findMedianSortedArraysAI(nums1, nums2);
         System.out.println(ans);
     }
 
@@ -128,6 +128,46 @@ public class LeetCodes {
         System.out.println(newArr);
 
         return retAns;
+    }
+
+
+
+    //By AI
+    public static double findMedianSortedArraysAI(int[] nums1, int[] nums2) {
+        // combine the two arrays into a single, sorted array
+        int[] nums = new int[nums1.length + nums2.length];
+        int i = 0, j = 0, k = 0;
+        while (i < nums1.length && j < nums2.length) {
+            if (nums1[i] < nums2[j]) {
+                nums[k] = nums1[i];
+                i++;
+            } else {
+                nums[k] = nums2[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < nums1.length) {
+            nums[k] = nums1[i];
+            i++;
+            k++;
+        }
+        while (j < nums2.length) {
+            nums[k] = nums2[j];
+            j++;
+            k++;
+        }
+
+        // calculate the median of the combined array
+        int n = nums.length;
+        if (n % 2 == 0) {
+            // if the array has even length, the median is the average of the two middle elements
+            return (nums[n / 2 - 1] + nums[n / 2]) / 2.0;
+        } else {
+            // if the array has odd length, the median is the middle element
+            return nums[n / 2];
+        }
     }
 }
 
