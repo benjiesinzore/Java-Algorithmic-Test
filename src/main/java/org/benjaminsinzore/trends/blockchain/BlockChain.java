@@ -1,4 +1,4 @@
-package org.benjaminsinzore.trends;
+package org.benjaminsinzore.trends.blockchain;
 
 import java.util.ArrayList;
 import java.util.List;
