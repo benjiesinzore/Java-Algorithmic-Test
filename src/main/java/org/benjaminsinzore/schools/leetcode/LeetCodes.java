@@ -17,9 +17,9 @@ public class LeetCodes {
 //        nearestExit(maze, entrance);
 
 
-        int[] nums1 = new int[]{10,1,2,3,3,9};
-        int[] nums2 = new int[]{4,5,6,7,8,9};
-        double ans = findMedianSortedArraysEf2(nums1, nums2);
+        int[] nums1 = new int[]{1,2,3};
+        int[] nums2 = new int[]{4,5,6};
+        double ans = findMedianSortedArraysEf1(nums1, nums2);
         System.out.println(ans);
 
     }
@@ -152,6 +152,8 @@ public class LeetCodes {
         //Check if the length is odd
         int getMid = 0;
         if (!Objects.equals(nums.length % 2, 0)){
+
+
 
             getMid = ((nums.length - 1) /2) + 1;
             retAns = nums[getMid];
