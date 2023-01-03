@@ -15,8 +15,8 @@ public class HackerRanks {
      */
     public static  List<String> feedProjectManagerList(){
         List<String> list = new ArrayList<>();
-        list.add("YNY");
         list.add("YYY");
+        list.add("YNN");
         list.add("NNY");
         list.add("NYY");
         list.add("YYY");
@@ -35,13 +35,14 @@ public class HackerRanks {
 
 
             if (Objects.equals(lst[0], "N")){
-                //
+
             } else if (Objects.equals(lst[1], "N")) {
-                //
+
             } else if (Objects.equals(lst[2], "Y")) {
                 System.out.println(count);
                 System.out.println(Arrays.toString(lst)+"\n");
             }
+
 
 //            for (int i = 0; i < lst.length; i++){
 //                System.out.println(Arrays.toString(lst)+"\n");
