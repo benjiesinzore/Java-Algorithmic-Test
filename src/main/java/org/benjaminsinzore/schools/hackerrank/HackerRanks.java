@@ -33,25 +33,12 @@ public class HackerRanks {
             count++;
             String[] lst = ss.split("");
 
-
-            if (Objects.equals(lst[0], "N")){
-
-            } else if (Objects.equals(lst[1], "N")) {
-
-            } else if (Objects.equals(lst[2], "Y")) {
-                System.out.println(count);
+            if ("Y".equals(lst[0]) && "Y".equals(lst[1]) && "Y".equals(lst[2])) {
                 System.out.println(Arrays.toString(lst)+"\n");
             }
 
-
-//            for (int i = 0; i < lst.length; i++){
-//                System.out.println(Arrays.toString(lst)+"\n");
-//            }
-
-
         }
-
-//        System.out.println(count);
+        System.out.println(count);
 
     }
 }
