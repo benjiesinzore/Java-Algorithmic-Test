@@ -7,7 +7,8 @@ public class LambdaExpressions {
 
     public static void main(String[] args){
 
-        myLambda();
+//        myLambda();
+        testMyLogic(24);
     }
 
     public static void myLambda(){
@@ -36,5 +37,18 @@ public class LambdaExpressions {
             System.out.println(Arrays.toString(myArr));
         }
 
+    }
+
+
+    public static void testMyLogic(int N){
+        if (N % 2 != 0){
+            System.out.println("Weird");
+        } else if (N >= 2 && N <= 5){
+            System.out.println("Not weird");
+        } else if (N >= 6 && N <= 20){
+            System.out.println("Weird");
+        } else if (N > 20){
+            System.out.println("Not weird");
+        }
     }
 }

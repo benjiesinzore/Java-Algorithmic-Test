@@ -30,20 +30,27 @@ public class HackerRanks {
         int count = 0;
         for (String ss : list){
 
+            count++;
             String[] lst = ss.split("");
-            System.out.println(Arrays.toString(lst));
 
-            for (String s : lst) {
-                if (Objects.equals(s, "N")) {
-                    break;
-                }
-                count++;
+
+            if (Objects.equals(lst[0], "N")){
+                //
+            } else if (Objects.equals(lst[1], "N")) {
+                //
+            } else if (Objects.equals(lst[2], "Y")) {
+                System.out.println(count);
+                System.out.println(Arrays.toString(lst)+"\n");
             }
+
+//            for (int i = 0; i < lst.length; i++){
+//                System.out.println(Arrays.toString(lst)+"\n");
+//            }
 
 
         }
 
-        System.out.println(count);
+//        System.out.println(count);
 
     }
 }

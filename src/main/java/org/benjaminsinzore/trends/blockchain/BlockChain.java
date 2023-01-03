@@ -58,6 +58,8 @@ public class BlockChain {
         // Calculate the hash of the block
         public String calculateHash() {
             // TODO: implement hash calculation
+            // TODO: 12/31/2022  jjj
+            blocks.toArray(new Object[0]);
             return "";
         }
 
