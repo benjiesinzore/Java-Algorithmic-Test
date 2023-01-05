@@ -7,6 +7,8 @@ public class HackerRanks {
     public static void main(String[] args){
 
         projectManager(feedProjectManagerList());
+
+//        System.out.println(new HackerRanks().findConsistentSubstring("Benjamiin"));
     }
 
     /*
@@ -16,9 +18,9 @@ public class HackerRanks {
     public static  List<String> feedProjectManagerList(){
         List<String> list = new ArrayList<>();
         list.add("YYY");
-        list.add("YNN");
+        list.add("YYY");
         list.add("NNY");
-        list.add("NYY");
+        list.add("YYY");
         list.add("YYY");
         list.add("YYY");
         list.add("YYY");
@@ -51,23 +53,24 @@ public class HackerRanks {
         }
 
         StringBuilder myStr = new StringBuilder();
+        System.out.println(Arrays.toString(newInt));
+
+
         for (int value : newInt) {
 
             for (int k = 1; k < newInt.length; k++) {
 
+                if (value + 1 == newInt[k] && newInt[k] - 1 == value){
 
-                if (value + 1 == newInt[k]) {
-
-                    myStr.append(value);
+                    System.out.println(myStr);
+                    myStr.append(value).append(newInt[k]);
                 }
 
             }
-
         }
 
-        if (newInt[newInt.length-1] -1 == newInt[newInt.length-2]){
-            myStr.append(newInt[newInt.length-1]);
-        }
+
+        System.out.println(myStr);
 
 
         String[] myStt = myStr.toString().split("");
@@ -93,12 +96,31 @@ public class HackerRanks {
                     fin.append("Saturday ");
                     break;
                 case "7":
-                    fin.append("Sunday");
+                    fin.append("Sunday ");
                     break;
             }
         }
 
         System.out.println(fin);
 
+    }
+
+
+
+
+    public int findConsistentSubstring(String s) {
+        int maxLength = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int length = 1;
+            for (int j = i + 1; j < s.length(); j++) {
+                if (s.charAt(j) == s.charAt(j - 1)) {
+                    length++;
+                } else {
+                    break;
+                }
+            }
+            maxLength = Math.max(maxLength, length);
+        }
+        return maxLength;
     }
 }
