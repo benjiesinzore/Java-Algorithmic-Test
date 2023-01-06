@@ -8,7 +8,6 @@ public class HackerRanks {
 
         projectManager(feedProjectManagerList());
 
-//        System.out.println(new HackerRanks().findConsistentSubstring("Benjamiin"));
     }
 
     /*
@@ -19,64 +18,100 @@ public class HackerRanks {
         List<String> list = new ArrayList<>();
         list.add("YYY");
         list.add("YYY");
-        list.add("NNY");
         list.add("YYY");
         list.add("YYY");
         list.add("YYY");
         list.add("YYY");
+        list.add("YNY");
         return list;
     }
 
     public static void projectManager(List<String> list){
 
-        int count = 0;
+        StringBuilder myStr = new StringBuilder();
+        StringBuilder myStrFin = new StringBuilder();
         StringBuilder sS = new StringBuilder();
+        StringBuilder fin = new StringBuilder();
+        StringBuilder SubFin = new StringBuilder();
+
+
+        int count = 0;
         for (String ss : list){
 
             count++;
             String[] lst = ss.split("");
-
-            if ("Y".equals(lst[0]) && "Y".equals(lst[1]) && "Y".equals(lst[2])) {
-
-                sS.append(count);
-            }
-
+            if ("Y".equals(lst[0]) && "Y".equals(lst[1]) && "Y".equals(lst[2])) sS.append(count);
         }
 
-        String[] mySs = sS.toString().split("");
 
+        String[] mySs = sS.toString().split("");
         int[] newInt = new int[mySs.length];
         int i = 0;
         for (String myInt : mySs){
+
             newInt[i] = Integer.parseInt(myInt);
             i++;
         }
 
-        StringBuilder myStr = new StringBuilder();
-        System.out.println(Arrays.toString(newInt));
 
-
+        int k = 1;
         for (int value : newInt) {
 
-            for (int k = 1; k < newInt.length; k++) {
-
-                if (value + 1 == newInt[k] && newInt[k] - 1 == value){
-
-                    System.out.println(myStr);
-                    myStr.append(value).append(newInt[k]);
-                }
-
-            }
+            if (k < newInt.length) if (value + 1 == newInt[k] && newInt[k] - 1 == value) myStr.append(value).append(newInt[k]);
+            k++;
         }
 
 
-        System.out.println(myStr);
+        String[] lst = myStr.toString().split("");
+        for (int jj = 0; jj < lst.length; jj++) {
+
+            if (jj == lst.length - 1) myStrFin.append(lst[lst.length-1]);
+
+            if (!(jj+1 == lst.length)) if (!(lst[jj].equals(lst[jj+1]))) myStrFin.append(lst[jj]);
+
+        }
 
 
-        String[] myStt = myStr.toString().split("");
-        StringBuilder fin = new StringBuilder();
+        System.out.println(myStrFin);
+        String[] myStk = myStrFin.toString().split("");
+        int myCo = 1;
+        SubFin.append(myStk[0]);
+        for (String kk: myStk) {
+
+            if (myCo == myStk.length) System.out.println(kk);
+
+            if ((myCo < myStk.length)){
+
+                int myKK = Integer.parseInt(kk);
+                int mySko = Integer.parseInt(myStk[myCo]);
+                if (myKK + 1 == mySko){
+
+                    System.out.println(kk);
+                    String[] myAt = SubFin.toString().split("");
+                    int myL;
+                    if (myAt.length > 1){
+
+                        myL = myAt.length - 1;
+                        int myKk = Integer.parseInt(myAt[myL]);
+
+                        if (!( myKk == myKK)) SubFin.append(myKK);
+                    }
+
+                }
+
+            }
+            myCo++;
+
+        }
+        System.out.println(SubFin + " sub");
+
+
+
+        String[] myStt = myStrFin.toString().split("");
         for (String st: myStt) {
+
             switch (st){
+
                 case "1":
                     fin.append("Monday ");
                     break;
@@ -100,7 +135,6 @@ public class HackerRanks {
                     break;
             }
         }
-
         System.out.println(fin);
 
     }
@@ -123,4 +157,5 @@ public class HackerRanks {
         }
         return maxLength;
     }
+
 }
