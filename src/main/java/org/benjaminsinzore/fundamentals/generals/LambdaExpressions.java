@@ -1,10 +1,13 @@
 package org.benjaminsinzore.fundamentals.generals;
 
+import org.benjaminsinzore.schools.hackerrank.NotNull;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class LambdaExpressions {
 
+    @NotNull
     public static void main(String[] args){
 
 //        myLambda();

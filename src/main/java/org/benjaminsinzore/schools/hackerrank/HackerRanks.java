@@ -6,7 +6,10 @@ public class HackerRanks {
 
     public static void main(String[] args){
 
-        projectManager(feedProjectManagerList());
+//        projectManager(feedProjectManagerList());
+
+
+       new HackerRanks().getMyHash(testMyHashMap());
 
     }
 
@@ -14,7 +17,10 @@ public class HackerRanks {
         Create a function that will return the most consecutive days all employees attended
 
      */
-    public static  List<String> feedProjectManagerList(){
+    @NotNull
+    public  static  List<String> feedProjectManagerList(){
+
+
         List<String> list = new ArrayList<>();
         list.add("YYY");
         list.add("YYY");
@@ -139,9 +145,6 @@ public class HackerRanks {
 
     }
 
-
-
-
     public int findConsistentSubstring(String s) {
         int maxLength = 0;
         for (int i = 0; i < s.length(); i++) {
@@ -157,5 +160,47 @@ public class HackerRanks {
         }
         return maxLength;
     }
+
+
+    public static HashMap<Integer, String> testMyHashMap() {
+
+        Hashtable<Integer, String> tb = new Hashtable<>();
+        HashMap<Integer, String> hush = new HashMap<>();
+        HashSet<String> st = new HashSet<>();
+
+        hush.put(1, "YYY");
+        hush.put(2, "YYY");
+        hush.put(3, "YYN");
+        hush.put(4, "NYY");
+        hush.put(5, "YYY");
+        hush.put(6, "YYY");
+        hush.put(7, "YYY");
+        return hush;
+    }
+
+
+    public void getMyHash(HashMap<Integer, String> hush){
+
+//        int num = 1;
+//        for (int i = 0; i < hush.size(); i++) {
+//
+//            String mySt = hush.get(num);
+//            System.out.println(mySt);
+//            num++;
+//        }
+
+
+        int num = 1;
+        for (String mySt : hush.values()) {
+
+            System.out.println(mySt);
+            num++;
+        }
+
+
+
+    }
+
+
 
 }
