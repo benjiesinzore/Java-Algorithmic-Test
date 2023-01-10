@@ -9,8 +9,12 @@ public class HackerRanks {
 //        projectManager(feedProjectManagerList());
 
 
-       new HackerRanks().getMyHash(testMyHashMap());
+//       new HackerRanks().getMyHash(testMyHashMap());
 
+        System.out.println(new HackerRanks().findConsistentSubstring("bbb"));
+
+
+//        System.out.println(new HackerRanks().testThis("Benjamin"));
     }
 
     /*
@@ -145,20 +149,58 @@ public class HackerRanks {
 
     }
 
+//    public int findConsistentSubstring(String s) {
+//        int maxLength = 0;
+//        for (int i = 0; i < s.length(); i++) {
+//            int length = 1;
+//            for (int j = i + 1; j < s.length(); j++) {
+//                if (s.charAt(j) == s.charAt(j - 1)) {
+//                    length++;
+//                } else {
+//                    break;
+//                }
+//            }
+//            maxLength = Math.max(maxLength, length);
+//        }
+//        return maxLength;
+//    }
+
+
+    public int testThis(String sS){
+        int maxLength = 0;
+        int i = 0;
+        do {
+            String[] st = sS.split("");
+            System.out.print(st[i]);
+            i++;
+        } while (i < sS.length());
+
+        return maxLength;
+    }
+
+
+
     public int findConsistentSubstring(String s) {
         int maxLength = 0;
-        for (int i = 0; i < s.length(); i++) {
+        int i = 0;
+        do {
             int length = 1;
-            for (int j = i + 1; j < s.length(); j++) {
+            int j = 1;
+            do {
                 if (s.charAt(j) == s.charAt(j - 1)) {
                     length++;
                 } else {
                     break;
                 }
-            }
+                j++;
+            } while (j < s.length());
+
             maxLength = Math.max(maxLength, length);
-        }
+            i++;
+        } while (i < s.length());
+
         return maxLength;
+
     }
 
 
