@@ -203,7 +203,6 @@ public class HackerRanks {
 
     }
 
-
     public static HashMap<Integer, String> testMyHashMap() {
 
         Hashtable<Integer, String> tb = new Hashtable<>();
