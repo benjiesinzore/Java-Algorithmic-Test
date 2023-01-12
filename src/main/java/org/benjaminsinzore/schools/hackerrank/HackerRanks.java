@@ -22,7 +22,7 @@ public class HackerRanks {
 
      */
     @NotNull
-    public  static  List<String> feedProjectManagerList(){
+    public  static  List<String> employeeAttendantList(){
 
 
         List<String> list = new ArrayList<>();
